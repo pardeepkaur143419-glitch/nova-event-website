@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page Background */
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4d8edc, #1f4f91);
+}
+
+/* Form Card */
+.form-container {
+    width: 520px;
+    padding: 35px 40px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Heading */
+.form-container h1 {
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.form-container .subtitle {
+    text-align: center;
+    color: #e5efff;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* Two fields in one row */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 16px;
+}
+
+/* Labels */
+.form-group label {
+    display: block;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+/* Inputs */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 9px;
+    padding: 13px 14px;
+    font-size: 14px;
+    color: #333;
+    transition: 0.3s;
+}
+
+/* Input focus */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    background: white;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+/* Placeholder */
+input::placeholder,
+textarea::placeholder {
+    color: #888;
+}
+
+/* Message */
+textarea {
+    height: 90px;
+    resize: none;
+}
+
+/* Checkbox */
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 5px 0 18px;
+    color: white;
+    font-size: 13px;
+}
+
+.terms input {
+    width: 16px;
+    height: 16px;
+    accent-color: #3184d8;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    background: white;
+    color: #4385c5;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #4385c5;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .form-container {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="form-container">
+ 
+        <h1>Create Account</h1>
+ 
+        <p>Fill in your details to create your account</p>
+ 
+        <form>
+ 
+            <!-- First & Last Name -->
+            <div class="row">
+ 
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+ 
+                    <input
+                        type="text"
+                        id="fname"
+                        placeholder="Enter first name"
+                        required
+                    >
+                </div>
+ 
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+ 
+                    <input
+                        type="text"
+                        id="lname"
+                        placeholder="Enter last name"
+                        required
+                    >
+                </div>
+ 
+            </div>
+ 
+            <!-- Email -->
+            <div class="form-group">
+ 
+                <label for="email">Email Address</label>
+ 
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="example@gmail.com"
+                    required
+                >
+ 
+            </div>
+ 
+            <!-- Phone -->
+            <div class="form-group">
+ 
+                <label for="phone">Phone Number</label>
+ 
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter phone number"
+                >
+ 
+            </div>
+ 
+            <!-- Course -->
+            <div class="form-group">
+ 
+                <label for="course">Select Course</label>
+ 
+                <select id="course">
+ 
+                    <option value="">Choose a course</option>
+                    <option>Web Development</option>
+                    <option>Python Programming</option>
+                    <option>Data Science</option>
+                    <option>Machine Learning</option>
+                    <option>Artificial Intelligence</option>
+ 
+                </select>
+ 
+            </div>
+ 
+            <!-- Message -->
+            <div class="form-group">
+ 
+                <label for="message">Message</label>
+ 
+                <textarea
+                    id="message"
+                    placeholder="Write your message..."
+                ></textarea>
+ 
+            </div>
+ 
+            <!-- Terms -->
+            <div class="terms">
+ 
+                <input type="checkbox" id="terms" required>
+ 
+                <label for="terms">
+                    I agree to the terms and conditions
+                </label>
+ 
+            </div>
+ 
+            <!-- Submit -->
+            <button type="submit" class="submit-btn">
+                Create Account
+            </button>
+ 
+        </form>
+ 
+    </div>
+ 
+</body>
+</html>
